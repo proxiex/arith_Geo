@@ -10,11 +10,13 @@ describe('arithGeo', function(){
     
     //handleling valid inputs
     describe('Handle valid input', function(){
-
+ 
+        // empty array
         it('should  return 0 for []', function(){
             assert.equal(app.arithGeo([]), 0);
         });
         
+        //Arithmetic
         it('should  return Arithmetic for [1,2,3,4,5]', function(){
             assert.equal(app.arithGeo([1,2,3,4,5]), 'Arithmetic');
         });
@@ -23,13 +25,16 @@ describe('arithGeo', function(){
             assert.equal(app.arithGeo([5,10,15,20,25]), 'Arithmetic');
         });
 
+         it('should  return Arithmetic for [0,3,6,9,11,14,17,20]', function(){
+            assert.equal(app.arithGeo([0,3,6,9]), 'Arithmetic');
+        });
+
+        //Geometric
+
         it('should  return Geometric for [-3,-1,1,3]', function(){
             assert.equal(app.arithGeo([-3,-1,1,3]), 'Arithmetic');
         });
 
-        it('should  return Arithmetic for [0,3,6,9,11,14,17,20]', function(){
-            assert.equal(app.arithGeo([0,3,6,9]), 'Arithmetic');
-        });
 
         it('should  return Geometric for [1,3,9,27]', function(){
             assert.equal(app.arithGeo([1,3,9,27]), 'Geometric');
@@ -43,6 +48,7 @@ describe('arithGeo', function(){
             assert.equal(app.arithGeo([1,3,9,27]), 'Geometric');
         });
 
+        //Neither geometric or arithmetic
         it('should  return -1 for [1,3,3,54,9]', function(){
             assert.equal(app.arithGeo([1,3,3,54,9]), -1);
         });
