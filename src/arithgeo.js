@@ -10,9 +10,7 @@ module.exports = {
         else{
             //collect the the diffrence or quaitent of the array values
             const arith = array[1] - array[0];
-            const arith_revers = array[0] - array[1];
             const geo = array[1] / array[0];
-            const geo_revers = array[0] / array[1]
 
             //set arithmetic and geometric variables to zero
             let arithmetic = true;
@@ -21,11 +19,11 @@ module.exports = {
             //loop through to determine if its geometric or arithmetic
             for(let i =0; i < array.length-1; i++ ){
                 
-                if(array[i+1] - array[i] != arith || array[i]-array[i+1] != arith_revers){
+                if(array[i+1] - array[i] != arith ){
                     arithmetic = false;
                 }
 
-                if(array[i+1] / array[i] != geo || array[i]/array[i+1] != geo_revers){
+                if(array[i+1] / array[i] != geo ){
                     geometric = false;
                 }
                 
