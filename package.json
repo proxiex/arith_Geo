@@ -1,0 +1,22 @@
+{
+  "name": "arithgeo",
+  "version": "1.0.0",
+  "description": "An application to determine if a array of number is an arithmetic, geometric progression or neither",
+  "main": "src/arithgeo.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha tests/test.js"
+  },
+  "keywords": [
+    "arithmetic",
+    "geometric"
+  ],
+  "author": "Samuel Longshak",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
+  }
+}
