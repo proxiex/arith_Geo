@@ -9,13 +9,16 @@ const app = require('../src/arithgeo.js');
 describe('arithGeo', function(){
     
     //handleling valid inputs
-    describe('Handle valid input', function(){
- 
+    describe('Handle empty  input', function(){ 
         // empty array
         it('should  return 0 for []', function(){
             assert.equal(app.arithGeo([]), 0);
         });
-        
+
+    });
+
+
+    describe('Handle Arithmetic  input', function(){ 
         //Arithmetic
         it('should  return Arithmetic for [1,2,3,4,5]', function(){
             assert.equal(app.arithGeo([1,2,3,4,5]), 'Arithmetic');
@@ -29,15 +32,16 @@ describe('arithGeo', function(){
             assert.equal(app.arithGeo([20,17,14,11,8,5,2,-1]), 'Arithmetic');
         });
 
-        //Geometric
-
         it('should  return Arithmetic for [-3,-1,1,3]', function(){
             assert.equal(app.arithGeo([-3,-1,1,3]), 'Arithmetic');
         });
+    });
 
+    describe('Handle Geometric  input', function(){ 
+        //Geometric
 
-        it('should  return Geometric for [1,3,9,27]', function(){
-            assert.equal(app.arithGeo([1,3,9,27]), 'Geometric');
+        it('should  return Geometric for [1,6,36,216]', function(){
+            assert.equal(app.arithGeo([1,6,36,216,]), 'Geometric');
         });
 
         it('should  return Geometric for [100,20,5,1]', function(){
@@ -48,6 +52,12 @@ describe('arithGeo', function(){
             assert.equal(app.arithGeo([1,3,9,27]), 'Geometric');
         });
 
+        it('should  return Geometric for [1,0.5,0.25,0.125]', function(){
+            assert.equal(app.arithGeo([1,0.5,0.25,0.125]), 'Geometric');
+        });
+    });
+
+    describe('Handle Non geometric or arithmetic  input', function(){ 
         //Neither geometric or arithmetic
         it('should  return -1 for [1,3,3,54,9]', function(){
             assert.equal(app.arithGeo([1,3,3,54,9]), -1);
@@ -62,5 +72,10 @@ describe('arithGeo', function(){
         });
 
         
-    })
+         it('should  return -1 for ["","hi",1,4,9]', function(){
+            assert.equal(app.arithGeo(["","hi",1,4,9]), -1);
+        });
+
+        
+    });
 })
