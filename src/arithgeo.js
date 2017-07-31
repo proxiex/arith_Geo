@@ -9,22 +9,24 @@ module.exports = {
         }
         else{
             //collect the the diffrence or quaitent of the array values
-            var arith = array[1] - array[0];
-            var geo = array[1] / array[0];
+            const arith = array[1] - array[0];
+            const arith_revers = array[0] - array[1];
+            const geo = array[1] / array[0];
+            const geo_revers = array[0] / array[1]
 
             //set arithmetic and geometric variables to zero
-            var arithmetic = true;
-            var geometric = true;
+            let arithmetic = true;
+            let geometric = true;
 
             //loop through to determine if its geometric or arithmetic
-            for(var i =0; i < array.length-1; i++ ){
+            for(let i =0; i < array.length-1; i++ ){
                 
-                if(array[i+1] - array[i] != arith ){
-                    var arithmetic = false;
+                if(array[i+1] - array[i] != arith || array[i]-array[i+1] != arith_revers){
+                    arithmetic = false;
                 }
 
-                if(array[i+1] / array[i] != geo){
-                   var geometric = false;
+                if(array[i+1] / array[i] != geo || array[i]/array[i+1] != geo_revers){
+                    geometric = false;
                 }
                 
             }

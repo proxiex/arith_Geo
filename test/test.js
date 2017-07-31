@@ -25,13 +25,13 @@ describe('arithGeo', function(){
             assert.equal(app.arithGeo([5,10,15,20,25]), 'Arithmetic');
         });
 
-         it('should  return Arithmetic for [0,3,6,9,11,14,17,20]', function(){
-            assert.equal(app.arithGeo([0,3,6,9]), 'Arithmetic');
+         it('should  return Arithmetic for [20,17,14,11,8,5,3,0]', function(){
+            assert.equal(app.arithGeo([20,17,14,11,8,5,2,-1]), 'Arithmetic');
         });
 
         //Geometric
 
-        it('should  return Geometric for [-3,-1,1,3]', function(){
+        it('should  return Arithmetic for [-3,-1,1,3]', function(){
             assert.equal(app.arithGeo([-3,-1,1,3]), 'Arithmetic');
         });
 
@@ -41,7 +41,7 @@ describe('arithGeo', function(){
         });
 
         it('should  return Geometric for [100,20,5,1]', function(){
-            assert.equal(app.arithGeo([1,3,9,27]), 'Geometric');
+            assert.equal(app.arithGeo([100,20,4]), 'Geometric');
         });
 
         it('should  return Geometric for [10,5,2.5]', function(){
